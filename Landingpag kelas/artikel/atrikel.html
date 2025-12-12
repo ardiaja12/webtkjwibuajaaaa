@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengenal Topologi Jaringan Komputer - XII TJKT B</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="artikel-style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html#artikel" class="back-btn">
+                ← Kembali ke Beranda
+            </a>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Article Container -->
+    <article class="article-container">
+        <!-- Article Header -->
+        <header class="article-header">
+            <span class="article-category-badge badge-network">Jaringan</span>
+            <h1 class="article-title">Mengenal Topologi Jaringan Komputer</h1>
+            <div class="article-meta">
+                <span>📅 12 Desember 2024</span>
+                <span>👤 XII TJKT B</span>
+                <span>⏱️ 5 menit baca</span>
+            </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="article-featured-image">
+            <img src="Top.jpg" alt="Topologi Jaringan">
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content">
+            <p>Topologi jaringan adalah cara atau metode yang digunakan untuk menghubungkan satu komputer dengan komputer lainnya. Struktur atau topologi jaringan ini sangat mempengaruhi performa, skalabilitas, dan biaya instalasi jaringan.</p>
+
+            <h2>Apa Itu Topologi Jaringan?</h2>
+            <p>Topologi jaringan merupakan susunan fisik atau logis dari perangkat jaringan yang saling terhubung. Pemilihan topologi yang tepat sangat penting karena akan mempengaruhi kecepatan transmisi data, efisiensi, dan keandalan jaringan.</p>
+
+            <div class="highlight-box">
+                <h4>💡 Mengapa Topologi Penting?</h4>
+                <p>Topologi yang baik akan meningkatkan efisiensi jaringan, mempermudah troubleshooting, dan mengoptimalkan biaya instalasi.</p>
+            </div>
+
+            <h2>Jenis-Jenis Topologi Jaringan</h2>
+
+            <h3>1. Topologi Bus</h3>
+            <p>Topologi bus menggunakan satu kabel utama sebagai media transmisi. Semua perangkat terhubung ke kabel utama ini menggunakan konektor.</p>
+            
+            <p><strong>Kelebihan:</strong></p>
+            <ul>
+                <li>Biaya instalasi murah</li>
+                <li>Mudah dikembangkan</li>
+                <li>Cocok untuk jaringan kecil</li>
+            </ul>
+
+            <p><strong>Kekurangan:</strong></p>
+            <ul>
+                <li>Jika kabel utama putus, seluruh jaringan terganggu</li>
+                <li>Sulit mendeteksi kerusakan</li>
+                <li>Lalu lintas data padat bisa memperlambat jaringan</li>
+            </ul>
+
+            <h3>2. Topologi Star (Bintang)</h3>
+            <p>Topologi star menggunakan hub atau switch sebagai pusat koneksi. Semua perangkat terhubung langsung ke hub/switch tersebut.</p>
+
+            <p><strong>Kelebihan:</strong></p>
+            <ul>
+                <li>Mudah dikelola dan dikembangkan</li>
+                <li>Kerusakan satu perangkat tidak mempengaruhi yang lain</li>
+                <li>Mudah mendeteksi dan mengisolasi kerusakan</li>
+            </ul>
+
+            <p><strong>Kekurangan:</strong></p>
+            <ul>
+                <li>Jika hub/switch rusak, seluruh jaringan mati</li>
+                <li>Biaya lebih mahal karena banyak kabel</li>
+                <li>Bergantung pada perangkat pusat</li>
+            </ul>
+
+            <h3>3. Topologi Ring (Cincin)</h3>
+            <p>Topologi ring menghubungkan setiap perangkat secara serial dalam bentuk lingkaran. Data mengalir searah atau dua arah.</p>
+
+            <p><strong>Kelebihan:</strong></p>
+            <ul>
+                <li>Performa lebih baik untuk jaringan besar</li>
+                <li>Data terorganisir dengan baik</li>
+                <li>Tidak ada tabrakan data</li>
+            </ul>
+
+            <p><strong>Kekurangan:</strong></p>
+            <ul>
+                <li>Kerusakan satu node mempengaruhi seluruh jaringan</li>
+                <li>Sulit dikonfigurasi ulang</li>
+                <li>Troubleshooting lebih kompleks</li>
+            </ul>
+
+            <h3>4. Topologi Mesh</h3>
+            <p>Topologi mesh menghubungkan setiap perangkat dengan semua perangkat lainnya. Ini menciptakan banyak jalur komunikasi alternatif.</p>
+
+            <p><strong>Kelebihan:</strong></p>
+            <ul>
+                <li>Sangat reliable dan fault-tolerant</li>
+                <li>Data dapat mengambil jalur alternatif jika ada kerusakan</li>
+                <li>Tidak ada bottleneck</li>
+            </ul>
+
+            <p><strong>Kekurangan:</strong></p>
+            <ul>
+                <li>Biaya sangat mahal</li>
+                <li>Instalasi dan konfigurasi rumit</li>
+                <li>Membutuhkan banyak kabel</li>
+            </ul>
+
+            <h3>5. Topologi Hybrid</h3>
+            <p>Topologi hybrid menggabungkan dua atau lebih topologi berbeda. Biasanya digunakan untuk jaringan besar yang kompleks.</p>
+
+            <h2>Memilih Topologi yang Tepat</h2>
+            <p>Pemilihan topologi harus mempertimbangkan beberapa faktor:</p>
+
+            <ul>
+                <li><strong>Ukuran jaringan:</strong> Berapa banyak perangkat yang akan terhubung?</li>
+                <li><strong>Budget:</strong> Berapa biaya yang tersedia untuk instalasi?</li>
+                <li><strong>Skalabilitas:</strong> Apakah jaringan akan dikembangkan di masa depan?</li>
+                <li><strong>Keandalan:</strong> Seberapa penting uptime jaringan?</li>
+                <li><strong>Performa:</strong> Berapa bandwidth yang dibutuhkan?</li>
+            </ul>
+
+            <h2>Kesimpulan</h2>
+            <p>Setiap topologi memiliki kelebihan dan kekurangan masing-masing. Topologi star adalah pilihan paling populer untuk jaringan modern karena kemudahan pengelolaan dan reliabilitasnya. Namun, untuk kebutuhan khusus, topologi lain seperti mesh atau hybrid bisa menjadi pilihan yang lebih baik.</p>
+
+            <div class="highlight-box">
+                <h4>🎯 Tips Praktis</h4>
+                <p>Untuk kantor kecil dan menengah, topologi star dengan switch managed adalah pilihan terbaik. Untuk data center atau jaringan kritis, pertimbangkan topologi mesh atau hybrid untuk redundansi maksimal.</p>
+            </div>
+        </div>
+
+        <!-- Article Footer -->
+        <footer class="article-footer">
+            <div class="article-tags">
+                <span class="tag">#Jaringan</span>
+                <span class="tag">#Topologi</span>
+                <span class="tag">#NetworkBasics</span>
+                <span class="tag">#TJKT</span>
+            </div>
+
+            <div class="share-section">
+                <h4>Bagikan Artikel Ini</h4>
+                <div class="share-buttons">
+                    <div class="share-btn" title="Share via WhatsApp">📱</div>
+                    <div class="share-btn" title="Share via Twitter">🐦</div>
+                    <div class="share-btn" title="Share via Facebook">📘</div>
+                    <div class="share-btn" title="Copy Link">🔗</div>
+                </div>
+            </div>
+        </footer>
+    </article>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.querySelector('.theme-icon');
+        
+        // Load theme from localStorage
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        themeIcon.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeIcon.textContent = newTheme === 'light' ? '🌙' : '☀️';
+        });
+
+        // Share functionality
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const title = document.querySelector('.article-title').textContent;
+                const url = window.location.href;
+                
+                if (this.title.includes('WhatsApp')) {
+                    window.open(`https://wa.me/?text=${encodeURIComponent(title + ' - ' + url)}`, '_blank');
+                } else if (this.title.includes('Twitter')) {
+                    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`, '_blank');
+                } else if (this.title.includes('Facebook')) {
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+                } else if (this.title.includes('Copy')) {
+                    navigator.clipboard.writeText(url);
+                    alert('Link berhasil disalin!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

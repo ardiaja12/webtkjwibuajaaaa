@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keamanan Jaringan: Konsep Dasar - XII TJKT B</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="artikel-style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html#artikel" class="back-btn">
+                ← Kembali ke Beranda
+            </a>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <header class="article-header">
+            <span class="article-category-badge badge-network">Jaringan</span>
+            <h1 class="article-title">Keamanan Jaringan: Konsep Dasar</h1>
+            <div class="article-meta">
+                <span>📅 12 Desember 2024</span>
+                <span>👤 XII TJKT B</span>
+                <span>⏱️ 7 menit baca</span>
+            </div>
+        </header>
+
+        <div class="article-featured-image">
+            <img src="../Cyberscuty.jpg" alt="Keamanan Jaringan">
+        </div>
+
+        <div class="article-content">
+            <p>Keamanan jaringan adalah aspek krusial dalam infrastruktur IT modern. Dengan meningkatnya ancaman cyber, memahami konsep dasar keamanan jaringan menjadi sangat penting bagi setiap network engineer.</p>
+
+            <h2>Mengapa Keamanan Jaringan Penting?</h2>
+            <p>Dalam era digital, data adalah aset berharga. Serangan cyber dapat menyebabkan kerugian finansial, pencurian data, dan kerusakan reputasi. Keamanan jaringan yang baik melindungi:</p>
+
+            <ul>
+                <li><strong>Confidentiality (Kerahasiaan):</strong> Memastikan data hanya diakses oleh pihak yang berwenang</li>
+                <li><strong>Integrity (Integritas):</strong> Menjaga data tetap akurat dan tidak dimodifikasi tanpa izin</li>
+                <li><strong>Availability (Ketersediaan):</strong> Memastikan sistem dan data selalu dapat diakses saat dibutuhkan</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>🔐 CIA Triad</h4>
+                <p>Prinsip dasar keamanan informasi: Confidentiality, Integrity, dan Availability. Ketiga pilar ini harus seimbang untuk keamanan optimal.</p>
+            </div>
+
+            <h2>Ancaman Keamanan Jaringan</h2>
+
+            <h3>1. Malware</h3>
+            <p>Software berbahaya yang dirancang untuk merusak atau mengeksploitasi sistem. Jenis-jenis malware:</p>
+            <ul>
+                <li><strong>Virus:</strong> Menempel pada file dan menyebar saat file dibuka</li>
+                <li><strong>Worm:</strong> Dapat menyebar sendiri tanpa interaksi user</li>
+                <li><strong>Trojan:</strong> Menyamar sebagai software legitimate</li>
+                <li><strong>Ransomware:</strong> Mengenkripsi data dan meminta tebusan</li>
+                <li><strong>Spyware:</strong> Mencuri informasi tanpa sepengetahuan user</li>
+            </ul>
+
+            <h3>2. Phishing</h3>
+            <p>Teknik social engineering yang menipu user untuk memberikan informasi sensitif seperti password atau data kartu kredit. Phishing biasanya dilakukan melalui email atau website palsu.</p>
+
+            <h3>3. DDoS (Distributed Denial of Service)</h3>
+            <p>Serangan yang membanjiri server dengan traffic berlebihan hingga sistem tidak dapat melayani user legitimate. DDoS dapat melumpuhkan website dan layanan online.</p>
+
+            <h3>4. Man-in-the-Middle (MitM)</h3>
+            <p>Penyerang menyusup di antara komunikasi dua pihak untuk mencuri atau memanipulasi data yang dikirimkan.</p>
+
+            <h3>5. SQL Injection</h3>
+            <p>Menyisipkan kode SQL berbahaya ke dalam input aplikasi untuk mengakses atau memanipulasi database.</p>
+
+            <h2>Lapisan Keamanan Jaringan</h2>
+
+            <h3>1. Perimeter Security</h3>
+            <p><strong>Firewall:</strong> Garis pertahanan pertama yang memfilter traffic masuk dan keluar berdasarkan aturan keamanan.</p>
+            <p><strong>DMZ (Demilitarized Zone):</strong> Zona buffer antara jaringan internal dan eksternal untuk layanan publik.</p>
+
+            <h3>2. Network Security</h3>
+            <p><strong>IDS/IPS:</strong> Intrusion Detection/Prevention System yang mendeteksi dan memblokir aktivitas mencurigakan.</p>
+            <p><strong>VPN:</strong> Virtual Private Network untuk koneksi terenkripsi yang aman.</p>
+            <p><strong>Network Segmentation:</strong> Membagi jaringan menjadi segment-segment untuk membatasi penyebaran serangan.</p>
+
+            <h3>3. Endpoint Security</h3>
+            <p><strong>Antivirus/Antimalware:</strong> Melindungi perangkat dari malware.</p>
+            <p><strong>Host-based Firewall:</strong> Firewall di setiap device.</p>
+            <p><strong>Patch Management:</strong> Update software secara teratur untuk menutup celah keamanan.</p>
+
+            <h3>4. Application Security</h3>
+            <p><strong>WAF (Web Application Firewall):</strong> Melindungi aplikasi web dari serangan.</p>
+            <p><strong>Secure Coding:</strong> Praktik pengembangan software yang aman.</p>
+
+            <h3>5. Data Security</h3>
+            <p><strong>Encryption:</strong> Mengenkripsi data at rest dan in transit.</p>
+            <p><strong>Backup:</strong> Backup data secara berkala untuk disaster recovery.</p>
+            <p><strong>DLP (Data Loss Prevention):</strong> Mencegah kebocoran data sensitif.</p>
+
+            <h2>Best Practices Keamanan Jaringan</h2>
+
+            <ol>
+                <li><strong>Implementasi Defense in Depth:</strong> Gunakan multiple layers of security</li>
+                <li><strong>Principle of Least Privilege:</strong> Berikan akses minimum yang diperlukan</li>
+                <li><strong>Regular Updates:</strong> Update sistem dan software secara rutin</li>
+                <li><strong>Strong Authentication:</strong> Gunakan password kuat dan multi-factor authentication (MFA)</li>
+                <li><strong>Network Monitoring:</strong> Monitor traffic jaringan secara real-time</li>
+                <li><strong>Security Awareness Training:</strong> Edukasi user tentang threat dan best practices</li>
+                <li><strong>Incident Response Plan:</strong> Siapkan rencana untuk menangani security incident</li>
+                <li><strong>Regular Security Audits:</strong> Lakukan audit dan penetration testing berkala</li>
+            </ol>
+
+            <div class="highlight-box">
+                <h4>⚠️ Password Security Tips</h4>
+                <ul>
+                    <li>Minimal 12 karakter dengan kombinasi huruf, angka, dan simbol</li>
+                    <li>Jangan gunakan informasi personal yang mudah ditebak</li>
+                    <li>Gunakan password manager untuk menyimpan password</li>
+                    <li>Aktifkan MFA di semua akun penting</li>
+                    <li>Ganti password secara berkala</li>
+                </ul>
+            </div>
+
+            <h2>Tools Keamanan Jaringan</h2>
+
+            <h3>Free & Open Source Tools:</h3>
+            <ul>
+                <li><strong>Wireshark:</strong> Network protocol analyzer</li>
+                <li><strong>Nmap:</strong> Network scanner untuk discovery dan security auditing</li>
+                <li><strong>Snort:</strong> Open source IDS/IPS</li>
+                <li><strong>pfSense:</strong> Open source firewall dan router</li>
+                <li><strong>Metasploit:</strong> Penetration testing framework</li>
+            </ul>
+
+            <h3>Commercial Solutions:</h3>
+            <ul>
+                <li><strong>Cisco ASA:</strong> Enterprise firewall</li>
+                <li><strong>Palo Alto Networks:</strong> Next-generation firewall</li>
+                <li><strong>Fortinet FortiGate:</strong> Unified threat management</li>
+                <li><strong>Check Point:</strong> Comprehensive security platform</li>
+            </ul>
+
+            <h2>Tren Keamanan Jaringan Modern</h2>
+
+            <h3>1. Zero Trust Architecture</h3>
+            <p>Model keamanan yang tidak mempercayai traffic apapun, baik dari dalam maupun luar jaringan. Setiap akses harus diverifikasi.</p>
+
+            <h3>2. AI dan Machine Learning</h3>
+            <p>Menggunakan AI untuk mendeteksi anomali dan threat secara real-time dengan akurasi lebih tinggi.</p>
+
+            <h3>3. Cloud Security</h3>
+            <p>Fokus pada securing cloud infrastructure dan aplikasi yang berjalan di cloud.</p>
+
+            <h3>4. IoT Security</h3>
+            <p>Mengamankan billions of IoT devices yang terhubung ke jaringan.</p>
+
+            <h3>5. SASE (Secure Access Service Edge)</h3>
+            <p>Menggabungkan network security dengan WAN capabilities dalam satu cloud service.</p>
+
+            <h2>Kesimpulan</h2>
+            <p>Keamanan jaringan adalah proses berkelanjutan, bukan one-time project. Dengan memahami konsep dasar, threat landscape, dan best practices, kita dapat membangun infrastruktur yang lebih secure dan resilient.</p>
+
+            <div class="highlight-box">
+                <h4>🎯 Key Takeaways</h4>
+                <ul>
+                    <li>Keamanan adalah responsibility bersama semua stakeholder</li>
+                    <li>Gunakan defense in depth strategy</li>
+                    <li>Stay updated dengan threat dan teknologi terbaru</li>
+                    <li>Regular training dan awareness untuk user</li>
+                    <li>Test dan audit sistem secara berkala</li>
+                </ul>
+            </div>
+
+            <blockquote>
+                "Security is not a product, but a process." - Bruce Schneier
+            </blockquote>
+        </div>
+
+        <footer class="article-footer">
+            <div class="article-tags">
+                <span class="tag">#NetworkSecurity</span>
+                <span class="tag">#Cybersecurity</span>
+                <span class="tag">#Firewall</span>
+                <span class="tag">#TJKT</span>
+                <span class="tag">#InfoSec</span>
+            </div>
+
+            <div class="share-section">
+                <h4>Bagikan Artikel Ini</h4>
+                <div class="share-buttons">
+                    <div class="share-btn" title="Share via WhatsApp">📱</div>
+                    <div class="share-btn" title="Share via Twitter">🐦</div>
+                    <div class="share-btn" title="Share via Facebook">📘</div>
+                    <div class="share-btn" title="Copy Link">🔗</div>
+                </div>
+            </div>
+        </footer>
+    </article>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.querySelector('.theme-icon');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        themeIcon.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeIcon.textContent = newTheme === 'light' ? '🌙' : '☀️';
+        });
+
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const title = document.querySelector('.article-title').textContent;
+                const url = window.location.href;
+                if (this.title.includes('WhatsApp')) {
+                    window.open(`https://wa.me/?text=${encodeURIComponent(title + ' - ' + url)}`, '_blank');
+                } else if (this.title.includes('Twitter')) {
+                    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`, '_blank');
+                } else if (this.title.includes('Facebook')) {
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+                } else if (this.title.includes('Copy')) {
+                    navigator.clipboard.writeText(url);
+                    alert('Link berhasil disalin!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

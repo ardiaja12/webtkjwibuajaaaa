@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation dengan Python - XII TJKT B</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="artikel-style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html#artikel" class="back-btn">
+                ← Kembali ke Beranda
+            </a>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <header class="article-header">
+            <span class="article-category-badge badge-programming">Programming</span>
+            <h1 class="article-title">Automation dengan Python untuk Network Engineer</h1>
+            <div class="article-meta">
+                <span>📅 12 Desember 2024</span>
+                <span>👤 XII TJKT B</span>
+                <span>⏱️ 8 menit baca</span>
+            </div>
+        </header>
+
+        <div class="article-featured-image">
+            <img src="../python.jpg" alt="Python Automation">
+        </div>
+
+        <div class="article-content">
+            <p>Python telah menjadi bahasa pemrograman favorit untuk network automation. Dengan syntax yang mudah dipahami dan library yang powerful, Python memungkinkan network engineer mengautomasi tugas-tugas repetitif dan meningkatkan efisiensi kerja.</p>
+
+            <h2>Mengapa Python untuk Network Automation?</h2>
+            
+            <h3>Keunggulan Python:</h3>
+            <ul>
+                <li><strong>Easy to Learn:</strong> Syntax sederhana dan readable</li>
+                <li><strong>Rich Libraries:</strong> Banyak library untuk networking (Netmiko, Paramiko, NAPALM)</li>
+                <li><strong>Cross-Platform:</strong> Berjalan di Windows, Linux, macOS</li>
+                <li><strong>Large Community:</strong> Dokumentasi lengkap dan community support</li>
+                <li><strong>API Integration:</strong> Mudah berinteraksi dengan REST APIs</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>💡 Fun Fact</h4>
+                <p>Python dinamakan berdasarkan acara komedi "Monty Python's Flying Circus", bukan dari ular python! Guido van Rossum, creator Python, adalah penggemar acara tersebut.</p>
+            </div>
+
+            <h2>Use Cases Network Automation</h2>
+
+            <h3>1. Configuration Management</h3>
+            <p>Mengautomasi konfigurasi banyak device sekaligus, seperti:</p>
+            <ul>
+                <li>Deploy konfigurasi standar ke device baru</li>
+                <li>Update ACL atau routing policy</li>
+                <li>Backup konfigurasi secara terjadwal</li>
+                <li>Rollback konfigurasi jika ada error</li>
+            </ul>
+
+            <h3>2. Network Monitoring</h3>
+            <p>Monitoring status jaringan dan alert otomatis:</p>
+            <ul>
+                <li>Cek interface status dan bandwidth utilization</li>
+                <li>Monitor CPU dan memory usage</li>
+                <li>Detect anomali traffic</li>
+                <li>Generate report otomatis</li>
+            </ul>
+
+            <h3>3. Troubleshooting & Diagnostics</h3>
+            <p>Automasi proses troubleshooting:</p>
+            <ul>
+                <li>Collect logs dari multiple devices</li>
+                <li>Run diagnostic commands</li>
+                <li>Analyze output dan identify issues</li>
+                <li>Generate troubleshooting report</li>
+            </ul>
+
+            <h3>4. Network Documentation</h3>
+            <p>Automasi dokumentasi jaringan:</p>
+            <ul>
+                <li>Generate network topology diagram</li>
+                <li>Create IP address inventory</li>
+                <li>Document device configurations</li>
+                <li>Track changes over time</li>
+            </ul>
+
+            <h2>Essential Python Libraries</h2>
+
+            <h3>1. Netmiko</h3>
+            <p>Library untuk koneksi SSH ke network devices.</p>
+            <pre><code>from netmiko import ConnectHandler
+
+device = {
+    'device_type': 'cisco_ios',
+    'host': '192.168.1.1',
+    'username': 'admin',
+    'password': 'password123'
+}
+
+connection = ConnectHandler(**device)
+output = connection.send_command('show ip interface brief')
+print(output)
+connection.disconnect()</code></pre>
+
+            <h3>2. NAPALM</h3>
+            <p>Network Automation and Programmability Abstraction Layer with Multivendor support.</p>
+            <pre><code>from napalm import get_network_driver
+
+driver = get_network_driver('ios')
+device = driver('192.168.1.1', 'admin', 'password123')
+device.open()
+
+facts = device.get_facts()
+print(facts)
+
+device.close()</code></pre>
+
+            <h3>3. Paramiko</h3>
+            <p>Low-level SSH library, base untuk Netmiko.</p>
+
+            <h3>4. Requests</h3>
+            <p>Untuk berinteraksi dengan REST APIs.</p>
+            <pre><code>import requests
+
+url = 'https://api.example.com/devices'
+headers = {'Authorization': 'Bearer token123'}
+
+response = requests.get(url, headers=headers)
+devices = response.json()
+print(devices)</code></pre>
+
+            <h3>5. Pandas</h3>
+            <p>Untuk data manipulation dan analysis.</p>
+
+            <h3>6. Matplotlib/Plotly</h3>
+            <p>Untuk visualisasi data network.</p>
+
+            <h2>Contoh Project: Automated Backup</h2>
+
+            <h3>Script untuk Backup Konfigurasi Router:</h3>
+            <pre><code>import netmiko
+from datetime import datetime
+import os
+
+def backup_device(device_info):
+    # Connect ke device
+    connection = netmiko.ConnectHandler(**device_info)
+    
+    # Get running config
+    config = connection.send_command('show running-config')
+    
+    # Create backup filename dengan timestamp
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    hostname = device_info['host']
+    filename = f'backup_{hostname}_{timestamp}.txt'
+    
+    # Save ke file
+    backup_dir = 'backups'
+    os.makedirs(backup_dir, exist_ok=True)
+    filepath = os.path.join(backup_dir, filename)
+    
+    with open(filepath, 'w') as f:
+        f.write(config)
+    
+    connection.disconnect()
+    print(f'Backup saved: {filepath}')
+
+# List devices
+devices = [
+    {
+        'device_type': 'cisco_ios',
+        'host': '192.168.1.1',
+        'username': 'admin',
+        'password': 'password123'
+    },
+    {
+        'device_type': 'cisco_ios',
+        'host': '192.168.1.2',
+        'username': 'admin',
+        'password': 'password123'
+    }
+]
+
+# Backup semua devices
+for device in devices:
+    try:
+        backup_device(device)
+    except Exception as e:
+        print(f'Error backing up {device["host"]}: {e}')</code></pre>
+
+            <div class="highlight-box">
+                <h4>🔐 Security Best Practice</h4>
+                <p>Jangan hardcode credentials di script! Gunakan environment variables atau credential vault seperti HashiCorp Vault. Contoh menggunakan environment variables:</p>
+                <pre><code>import os
+
+username = os.getenv('NETWORK_USERNAME')
+password = os.getenv('NETWORK_PASSWORD')</code></pre>
+            </div>
+
+            <h2>Contoh Project: Interface Status Monitor</h2>
+
+            <pre><code>import netmiko
+import time
+
+def check_interfaces(device):
+    connection = netmiko.ConnectHandler(**device)
+    output = connection.send_command('show ip interface brief')
+    
+    # Parse output
+    lines = output.split('\n')[1:]  # Skip header
+    down_interfaces = []
+    
+    for line in lines:
+        if 'down' in line.lower():
+            interface = line.split()[0]
+            down_interfaces.append(interface)
+    
+    connection.disconnect()
+    
+    if down_interfaces:
+        print(f'⚠️  Alert! Down interfaces on {device["host"]}:')
+        for intf in down_interfaces:
+            print(f'  - {intf}')
+    else:
+        print(f'✅ All interfaces UP on {device["host"]}')
+
+# Monitor setiap 5 menit
+while True:
+    for device in devices:
+        try:
+            check_interfaces(device)
+        except Exception as e:
+            print(f'Error: {e}')
+    
+    time.sleep(300)  # Wait 5 minutes</code></pre>
+
+            <h2>Tips & Best Practices</h2>
+
+            <ol>
+                <li><strong>Start Small:</strong> Mulai dengan task sederhana seperti backup config</li>
+                <li><strong>Error Handling:</strong> Selalu gunakan try-except untuk handle errors</li>
+                <li><strong>Logging:</strong> Implement logging untuk troubleshooting</li>
+                <li><strong>Testing:</strong> Test di lab environment dulu sebelum production</li>
+                <li><strong>Version Control:</strong> Gunakan Git untuk track changes</li>
+                <li><strong>Documentation:</strong> Comment code dan buat README</li>
+                <li><strong>Modular Code:</strong> Buat functions yang reusable</li>
+                <li><strong>Security:</strong> Jangan commit credentials ke Git</li>
+            </ol>
+
+            <h2>Learning Path</h2>
+
+            <h3>Tahap 1: Python Basics</h3>
+            <ul>
+                <li>Variables dan data types</li>
+                <li>Loops dan conditionals</li>
+                <li>Functions</li>
+                <li>File handling</li>
+                <li>Exception handling</li>
+            </ul>
+
+            <h3>Tahap 2: Networking Concepts</h3>
+            <ul>
+                <li>TCP/IP fundamentals</li>
+                <li>SSH dan Telnet</li>
+                <li>REST APIs</li>
+                <li>JSON dan YAML</li>
+            </ul>
+
+            <h3>Tahap 3: Automation Libraries</h3>
+            <ul>
+                <li>Netmiko untuk SSH</li>
+                <li>NAPALM untuk multivendor</li>
+                <li>Requests untuk APIs</li>
+                <li>Pandas untuk data</li>
+            </ul>
+
+            <h3>Tahap 4: Advanced Topics</h3>
+            <ul>
+                <li>Ansible untuk orchestration</li>
+                <li>CI/CD pipelines</li>
+                <li>Network testing frameworks</li>
+                <li>ChatOps integration</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>📚 Resource Rekomendasi</h4>
+                <ul>
+                    <li><strong>Books:</strong> "Network Programmability and Automation" by Jason Edelman</li>
+                    <li><strong>Online:</strong> Python for Network Engineers course di Udemy</li>
+                    <li><strong>Practice:</strong> GNS3 atau EVE-NG untuk lab virtual</li>
+                    <li><strong>Community:</strong> NetworkToCode Slack community</li>
+                </ul>
+            </div>
+
+            <h2>Kesimpulan</h2>
+            <p>Network automation dengan Python adalah skill yang sangat valuable di era modern. Mulai dengan project kecil, practice secara konsisten, dan perlahan tingkatkan complexity. Remember: automation bukan untuk replace network engineers, tapi untuk make them more efficient dan fokus ke high-value tasks!</p>
+
+            <blockquote>
+                "Automation is not about replacing people, it's about empowering them to do more meaningful work."
+            </blockquote>
+        </div>
+
+        <footer class="article-footer">
+            <div class="article-tags">
+                <span class="tag">#Python</span>
+                <span class="tag">#Automation</span>
+                <span class="tag">#NetworkProgramming</span>
+                <span class="tag">#DevOps</span>
+                <span class="tag">#TJKT</span>
+            </div>
+
+            <div class="share-section">
+                <h4>Bagikan Artikel Ini</h4>
+                <div class="share-buttons">
+                    <div class="share-btn" title="Share via WhatsApp">📱</div>
+                    <div class="share-btn" title="Share via Twitter">🐦</div>
+                    <div class="share-btn" title="Share via Facebook">📘</div>
+                    <div class="share-btn" title="Copy Link">🔗</div>
+                </div>
+            </div>
+        </footer>
+    </article>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.querySelector('.theme-icon');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        themeIcon.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeIcon.textContent = newTheme === 'light' ? '🌙' : '☀️';
+        });
+
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const title = document.querySelector('.article-title').textContent;
+                const url = window.location.href;
+                if (this.title.includes('WhatsApp')) {
+                    window.open(`https://wa.me/?text=${encodeURIComponent(title + ' - ' + url)}`, '_blank');
+                } else if (this.title.includes('Twitter')) {
+                    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`, '_blank');
+                } else if (this.title.includes('Facebook')) {
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+                } else if (this.title.includes('Copy')) {
+                    navigator.clipboard.writeText(url);
+                    alert('Link berhasil disalin!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

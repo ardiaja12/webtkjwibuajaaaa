@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasar-Dasar Pemrograman untuk Jaringan - XII TJKT B</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="artikel-style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html#artikel" class="back-btn">
+                ← Kembali ke Beranda
+            </a>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <header class="article-header">
+            <span class="article-category-badge badge-programming">Programming</span>
+            <h1 class="article-title">Dasar-Dasar Pemrograman untuk Jaringan</h1>
+            <div class="article-meta">
+                <span>📅 12 Desember 2024</span>
+                <span>👤 XII TJKT B</span>
+                <span>⏱️ 6 menit baca</span>
+            </div>
+        </header>
+
+        <div class="article-featured-image">
+            <img src="../Programer.jpg" alt="Programming untuk Jaringan">
+        </div>
+
+        <div class="article-content">
+            <p>Pemrograman dalam jaringan komputer sangat penting untuk automasi, monitoring, dan troubleshooting. Dengan skill programming, network engineer dapat meningkatkan efisiensi kerja dan membuat solusi custom sesuai kebutuhan.</p>
+
+            <h2>Mengapa Network Engineer Perlu Belajar Programming?</h2>
+
+            <h3>1. Automation & Efficiency</h3>
+            <p>Manual configuration untuk ratusan devices sangat time-consuming dan prone to errors. Dengan programming, task repetitif dapat diotomasi:</p>
+            <ul>
+                <li>Batch configuration deployment</li>
+                <li>Automated backup dan recovery</li>
+                <li>Scheduled maintenance tasks</li>
+                <li>Report generation</li>
+            </ul>
+
+            <h3>2. Network Monitoring</h3>
+            <p>Create custom monitoring tools yang sesuai dengan kebutuhan spesifik:</p>
+            <ul>
+                <li>Real-time traffic monitoring</li>
+                <li>Performance metrics collection</li>
+                <li>Alert system untuk anomali</li>
+                <li>Custom dashboards</li>
+            </ul>
+
+            <h3>3. Troubleshooting</h3>
+            <p>Accelerate troubleshooting process dengan scripts:</p>
+            <ul>
+                <li>Log analysis automation</li>
+                <li>Diagnostic command execution</li>
+                <li>Issue pattern detection</li>
+                <li>Root cause analysis</li>
+            </ul>
+
+            <h3>4. Career Advancement</h3>
+            <p>Programming skills membuka peluang karir lebih luas:</p>
+            <ul>
+                <li>Network Automation Engineer</li>
+                <li>DevOps Engineer</li>
+                <li>Cloud Network Engineer</li>
+                <li>SDN/NFV Specialist</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>💼 Job Market Insight</h4>
+                <p>Network engineers dengan programming skills rata-rata mendapat salary 20-30% lebih tinggi dibanding yang tidak punya skill programming. Source: Dice Tech Salary Report 2024</p>
+            </div>
+
+            <h2>Bahasa Pemrograman untuk Networking</h2>
+
+            <h3>1. Python 🐍</h3>
+            <p><strong>Rekomendasi: ⭐⭐⭐⭐⭐</strong></p>
+            <p>Bahasa #1 untuk network automation. Easy to learn, powerful libraries.</p>
+
+            <p><strong>Keunggulan:</strong></p>
+            <ul>
+                <li>Syntax yang readable dan simple</li>
+                <li>Rich libraries: Netmiko, NAPALM, Paramiko</li>
+                <li>Large community support</li>
+                <li>Perfect untuk scripting dan automation</li>
+            </ul>
+
+            <p><strong>Use Cases:</strong></p>
+            <ul>
+                <li>Configuration management</li>
+                <li>Network monitoring scripts</li>
+                <li>API integration</li>
+                <li>Data analysis</li>
+            </ul>
+
+            <pre><code># Contoh simple Python script
+import socket
+
+def check_port(host, port):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.settimeout(2)
+    result = sock.connect_ex((host, port))
+    sock.close()
+    
+    if result == 0:
+        return f"Port {port} is OPEN"
+    else:
+        return f"Port {port} is CLOSED"
+
+print(check_port('192.168.1.1', 22))</code></pre>
+
+            <h3>2. JavaScript/Node.js</h3>
+            <p><strong>Rekomendasi: ⭐⭐⭐⭐</strong></p>
+            <p>Excellent untuk web-based network tools dan real-time monitoring.</p>
+
+            <p><strong>Keunggulan:</strong></p>
+            <ul>
+                <li>Perfect untuk web applications</li>
+                <li>Real-time capabilities dengan WebSocket</li>
+                <li>Huge ecosystem (npm)</li>
+                <li>Full-stack development</li>
+            </ul>
+
+            <p><strong>Use Cases:</strong></p>
+            <ul>
+                <li>Network monitoring dashboards</li>
+                <li>Web-based management tools</li>
+                <li>API servers</li>
+                <li>Real-time visualization</li>
+            </ul>
+
+            <h3>3. Go (Golang)</h3>
+            <p><strong>Rekomendasi: ⭐⭐⭐⭐</strong></p>
+            <p>Fast, efficient, great untuk high-performance networking tools.</p>
+
+            <p><strong>Keunggulan:</strong></p>
+            <ul>
+                <li>Excellent performance</li>
+                <li>Built-in concurrency</li>
+                <li>Single binary deployment</li>
+                <li>Strong typing</li>
+            </ul>
+
+            <p><strong>Use Cases:</strong></p>
+            <ul>
+                <li>High-performance network scanners</li>
+                <li>Load balancers</li>
+                <li>Network proxies</li>
+                <li>Cloud-native tools</li>
+            </ul>
+
+            <h3>4. Bash/Shell Scripting</h3>
+            <p><strong>Rekomendasi: ⭐⭐⭐</strong></p>
+            <p>Essential untuk Linux networking dan quick automation.</p>
+
+            <p><strong>Use Cases:</strong></p>
+            <ul>
+                <li>System administration tasks</li>
+                <li>Log processing</li>
+                <li>Quick diagnostic scripts</li>
+                <li>Cron jobs</li>
+            </ul>
+
+            <pre><code>#!/bin/bash
+# Check connectivity to multiple hosts
+
+hosts=("192.168.1.1" "192.168.1.2" "192.168.1.3")
+
+for host in "${hosts[@]}"; do
+    if ping -c 1 "$host" &> /dev/null; then
+        echo "✅ $host is UP"
+    else
+        echo "❌ $host is DOWN"
+    fi
+done</code></pre>
+
+            <h2>Konsep Programming untuk Network</h2>
+
+            <h3>1. Variables & Data Types</h3>
+            <p>Store data seperti IP addresses, hostnames, configurations:</p>
+            <pre><code># Python example
+hostname = "Router-01"
+ip_address = "192.168.1.1"
+port = 22
+is_reachable = True
+
+# Dictionary untuk device info
+device = {
+    "hostname": "Router-01",
+    "ip": "192.168.1.1",
+    "vendor": "Cisco",
+    "ports": [22, 23, 80, 443]
+}</code></pre>
+
+            <h3>2. Loops & Conditionals</h3>
+            <p>Iterate through multiple devices atau membuat logic decisions:</p>
+            <pre><code># Loop through devices
+devices = ["192.168.1.1", "192.168.1.2", "192.168.1.3"]
+
+for device in devices:
+    if ping(device):
+        print(f"{device} is reachable")
+        backup_config(device)
+    else:
+        print(f"{device} is unreachable")
+        send_alert(device)</code></pre>
+
+            <h3>3. Functions</h3>
+            <p>Reusable code blocks untuk task yang sering dilakukan:</p>
+            <pre><code>def connect_to_device(ip, username, password):
+    """Connect to network device via SSH"""
+    try:
+        connection = ssh_connect(ip, username, password)
+        return connection
+    except Exception as e:
+        print(f"Connection failed: {e}")
+        return None
+
+def backup_config(device_ip):
+    """Backup device configuration"""
+    conn = connect_to_device(device_ip, "admin", "pass")
+    if conn:
+        config = conn.send_command("show run")
+        save_to_file(config, f"backup_{device_ip}.txt")
+        conn.disconnect()</code></pre>
+
+            <h3>4. Error Handling</h3>
+            <p>Handle exceptions untuk robust code:</p>
+            <pre><code>try:
+    connection = connect_to_device(ip, user, pwd)
+    config = connection.send_command("show run")
+except ConnectionError as e:
+    print(f"Connection failed: {e}")
+except TimeoutError as e:
+    print(f"Timeout occurred: {e}")
+except Exception as e:
+    print(f"Unexpected error: {e}")
+finally:
+    if connection:
+        connection.disconnect()</code></pre>
+
+            <h3>5. File Operations</h3>
+            <p>Read/write configurations, logs, reports:</p>
+            <pre><code># Write config to file
+with open('config.txt', 'w') as f:
+    f.write(config_data)
+
+# Read from file
+with open('devices.txt', 'r') as f:
+    devices = f.readlines()
+
+# Append to log file
+with open('network.log', 'a') as f:
+    f.write(f"{timestamp}: {log_message}\n")</code></pre>
+
+            <h2>API Programming</h2>
+
+            <h3>REST APIs</h3>
+            <p>Modern network devices expose REST APIs untuk programmability:</p>
+            <pre><code>import requests
+
+# GET request
+response = requests.get(
+    'https://router.example.com/api/interfaces',
+    headers={'Authorization': 'Bearer token123'}
+)
+interfaces = response.json()
+
+# POST request untuk konfigurasi
+data = {
+    "interface": "GigabitEthernet0/1",
+    "ip_address": "192.168.1.1",
+    "subnet_mask": "255.255.255.0"
+}
+
+response = requests.post(
+    'https://router.example.com/api/configure',
+    headers={'Authorization': 'Bearer token123'},
+    json=data
+)
+
+if response.status_code == 200:
+    print("Configuration successful!")
+else:
+    print(f"Error: {response.status_code}")</code></pre>
+
+            <div class="highlight-box">
+                <h4>🌐 Popular Network APIs</h4>
+                <ul>
+                    <li><strong>Cisco DNA Center:</strong> RESTful API untuk intent-based networking</li>
+                    <li><strong>Meraki Dashboard API:</strong> Cloud-managed networking</li>
+                    <li><strong>Juniper Junos:</strong> NETCONF/REST APIs</li>
+                    <li><strong>Arista eAPI:</strong> JSON-RPC API</li>
+                </ul>
+            </div>
+
+            <h2>Learning Path</h2>
+
+            <h3>Beginner (Bulan 1-2)</h3>
+            <ol>
+                <li>Pilih bahasa: Start dengan Python</li>
+                <li>Learn basics: variables, data types, operators</li>
+                <li>Control flow: if/else, loops</li>
+                <li>Functions dan modules</li>
+                <li>File handling</li>
+                <li>Practice dengan simple scripts</li>
+            </ol>
+
+            <h3>Intermediate (Bulan 3-4)</h3>
+            <ol>
+                <li>Learn SSH dengan Paramiko/Netmiko</li>
+                <li>Work dengan APIs (requests library)</li>
+                <li>Data structures: lists, dictionaries, sets</li>
+                <li>Error handling dan debugging</li>
+                <li>Regular expressions untuk parsing</li>
+                <li>Build network automation scripts</li>
+            </ol>
+
+            <h3>Advanced (Bulan 5-6)</h3>
+            <ol>
+                <li>Advanced libraries: NAPALM, Nornir</li>
+                <li>Testing frameworks</li>
+                <li>CI/CD untuk network automation</li>
+                <li>Version control dengan Git</li>
+                <li>Containerization (Docker)</li>
+                <li>Build complete automation solutions</li>
+            </ol>
+
+            <h2>Project Ideas untuk Practice</h2>
+
+            <h3>Beginner Projects:</h3>
+            <ul>
+                <li>IP address calculator</li>
+                <li>Ping sweeper</li>
+                <li>Port scanner</li>
+                <li>Device inventory tracker</li>
+            </ul>
+
+            <h3>Intermediate Projects:</h3>
+            <ul>
+                <li>Automated backup system</li>
+                <li>Network health monitor</li>
+                <li>Configuration compliance checker</li>
+                <li>VLAN management tool</li>
+            </ul>
+
+            <h3>Advanced Projects:</h3>
+            <ul>
+                <li>Full network automation platform</li>
+                <li>Real-time network dashboard</li>
+                <li>Incident response automation</li>
+                <li>Network topology discovery tool</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>🎓 Learning Resources</h4>
+                <ul>
+                    <li><strong>Free:</strong> Python for Everybody (Coursera)</li>
+                    <li><strong>Books:</strong> "Automate the Boring Stuff with Python"</li>
+                    <li><strong>Practice:</strong> HackerRank, LeetCode untuk algorithms</li>
+                    <li><strong>Network-specific:</strong> Kirk Byers' Python for Network Engineers</li>
+                </ul>
+            </div>
+
+            <h2>Tips untuk Success</h2>
+
+            <ol>
+                <li><strong>Start Small:</strong> Jangan langsung project besar, mulai dari script sederhana</li>
+                <li><strong>Practice Daily:</strong> Coding skill butuh consistent practice</li>
+                <li><strong>Read Code:</strong> Baca code orang lain untuk learn best practices</li>
+                <li><strong>Build Projects:</strong> Apply knowledge ke real projects</li>
+                <li><strong>Join Community:</strong> Network dengan fellow learners</li>
+                <li><strong>Document Everything:</strong> Write comments dan documentation</li>
+                <li><strong>Learn Git:</strong> Version control adalah must-have skill</li>
+                <li><strong>Ask Questions:</strong> Don't be afraid to ask di forums/communities</li>
+            </ol>
+
+            <h2>Kesimpulan</h2>
+            <p>Programming bukan lagi optional skill untuk network engineers—it's becoming essential. Start learning sekarang, practice consistently, dan dalam beberapa bulan Anda akan lihat significant improvement dalam productivity dan career opportunities!</p>
+
+            <blockquote>
+                "Learning to code is learning to create and innovate." - Abhishek Kumar
+            </blockquote>
+        </div>
+
+        <footer class="article-footer">
+            <div class="article-tags">
+                <span class="tag">#Programming</span>
+                <span class="tag">#Python</span>
+                <span class="tag">#NetworkAutomation</span>
+                <span class="tag">#Coding</span>
+                <span class="tag">#TJKT</span>
+            </div>
+
+            <div class="share-section">
+                <h4>Bagikan Artikel Ini</h4>
+                <div class="share-buttons">
+                    <div class="share-btn" title="Share via WhatsApp">📱</div>
+                    <div class="share-btn" title="Share via Twitter">🐦</div>
+                    <div class="share-btn" title="Share via Facebook">📘</div>
+                    <div class="share-btn" title="Copy Link">🔗</div>
+                </div>
+            </div>
+        </footer>
+    </article>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.querySelector('.theme-icon');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        themeIcon.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeIcon.textContent = newTheme === 'light' ? '🌙' : '☀️';
+        });
+
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const title = document.querySelector('.article-title').textContent;
+                const url = window.location.href;
+                if (this.title.includes('WhatsApp')) {
+                    window.open(`https://wa.me/?text=${encodeURIComponent(title + ' - ' + url)}`, '_blank');
+                } else if (this.title.includes('Twitter')) {
+                    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`, '_blank');
+                } else if (this.title.includes('Facebook')) {
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+                } else if (this.title.includes('Copy')) {
+                    navigator.clipboard.writeText(url);
+                    alert('Link berhasil disalin!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
